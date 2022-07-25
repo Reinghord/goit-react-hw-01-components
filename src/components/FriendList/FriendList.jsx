@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
-
-const { default: FriendListItem } = require('./FriendListItem');
+import FriendListItem from '../FriendListItem/FriendListItem';
+import s from './FriendList.module.css';
 
 const FriendList = ({ friends }) => {
   return (
-    <ul class="friend-list">
+    <ul className={s.friendList}>
       {friends.map(({ avatar, name, isOnline, id }) => {
         return (
-          <li class="item" key={id}>
+          <li className={s.item} key={id}>
             <FriendListItem avatar={avatar} name={name} isOnline={isOnline} />
           </li>
         );
